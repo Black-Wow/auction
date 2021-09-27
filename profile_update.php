@@ -1,8 +1,8 @@
 <?php 
 include'db_connection.php';
-session_start();
+
 $emailErr = $passErr = $cpassErr = $passnewErr ="";
-$email = $id = $pass = $cpass = $passnew ="";
+$email =   $id = $pass = $cpass = $passnew ="";
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -10,14 +10,16 @@ function test_input($data) {
     return $data;
   }
   
+ 
+
   $email=$_SESSION['email'];
-  $qry="SELECT * from register where email='$email'";
+  $qry="SELECT * from seller where email='$email'";
   $result = mysqli_query($db,$qry);
   if(mysqli_num_rows($result) > 0 ){
     while($row= mysqli_fetch_assoc($result)){
    
-   $id= $row['lid_user'];
-   
+   $id= $row['seller_id'];
+   echo $id;
     }}
 if(isset($_POST['save_change'])){
     
@@ -35,19 +37,21 @@ if(isset($_POST['save_change'])){
     //image1
     $p_image = $_FILES["p_img"]["name"];
     $p_image_temp = $_FILES["p_img"]["tmp_name"];
-    $floder="profile_img/".$v3.$p_image;
+    $floder="../user/html/profile_img/".$v3.$p_image;
     
 //move-upload image1
 move_uploaded_file($p_image_temp,$floder);
   
-    $qry = "UPDATE register SET name='$name', lastname='$lastname', address='$address', phoneno='$phone', country='$country', states='$state' ,p_img='$floder' WHERE lid_user ='$id'";
+    $qry = "UPDATE seller SET name='$name', lastname='$lastname', address='$address', phoneno='$phone', country='$country', states='$state' ,img='$floder' WHERE seller_id = '$id'";
              
     mysqli_query($db,$qry ) or die(mysqli_error($db));
     echo "<script>alert('Updated successfully')</script>";
     
 
+    
 
-}   
+
+}
 
 
 
@@ -82,7 +86,7 @@ if(isset($_POST['password_change'])){
         }
       }
 
-$user_check_query="SELECT * FROM register WHERE lid_user = '$id' ";
+$user_check_query="SELECT * FROM register WHERE email = 'sama.ali413@gmail.com' ";
 $result = mysqli_query($db,$user_check_query);
 $user =mysqli_fetch_assoc($result);
 if($user) {
@@ -94,7 +98,7 @@ if($user) {
 if($emailErr=="" && $passErr=="" && $cpassErr=="" && $passnewErr=="") {
   
 
-    $qry = "UPDATE register SET password='$pass_new' WHERE lid_user='$id' and password='$pass'";
+    $qry = "UPDATE register SET password='$pass_new' WHERE lid_user=47 and password='$pass'";
              
     mysqli_query($db,$qry ) or die(mysqli_error($db));
 
