@@ -1,0 +1,296 @@
+html,body{
+    font-family: NunitoSans,sans-serif;
+  
+
+}
+.register{
+    width: 100%;
+  display: flex;
+    margin-top: 50px;
+    justify-content: left;
+    align-items: center;
+    color: black;
+}
+.register .container{
+ margin-top: 0px;
+}
+@media (min-width: 769px){
+.register .container .title {
+    margin: 25px 0;
+    justify-content: flex-start;
+}
+}
+.register .container .title {
+    border-top: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: center ;
+}
+.register .container .title span {
+    font-weight: 700;
+    padding: 0 ;
+    margin-top: -8px;
+    background: #fff;
+    color: #2d2d2d;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.register .container .register_input{
+    width: 600px;
+    height: 800px;
+    position: relative;
+    top: -800px;
+    margin-left: 200px;
+    
+    display: none;
+    transition: 0.3ms ease-out;
+
+}
+
+.register .container .register_input .register_box .radio_btn{
+    width: 50%;
+    
+}
+.register .container .register_input .register_box .radio_btn input{
+    width: 0px;
+    padding: 0;
+    height: 15px;
+    border-radius: 0;
+}
+.register .container .register_input .register_box .radio_btn input:focus{
+    color: skyblue;
+}
+.register .container .register_input .register_box .radio_btn .flex{
+    display: flex;
+    margin: 0px 0 10px ;
+}
+.register .container .register_input .register_box input {
+    border: none;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 17px;
+    width: 100%;
+    height: 50px;
+    outline-color: rgba(218, 165, 32, 0.3);
+    outline-width: .5px;
+    background-color: transparent;
+
+}
+.register .container .register_input .register_box  p{
+    margin: 15px 0;
+    font-size: 14px;
+}
+.register .container .register_input .register_box .flex{
+    display: flex;
+    margin: 10px 0 10px ;
+    
+
+}
+.register .container .register_input .register_box .flex input{
+    margin-right: 3px;
+    width: 300px;
+}
+.register .container .register_input .register_box input[type="submit"] {
+    background: #f5ba1a;
+    height: 45px;
+    line-height: 5px;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    margin:35px 10px 10px 0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+}
+.register .container .register_input .register_box input[type="submit"]:hover {
+        background: #f5ba1a;
+    }
+    .register .container .register_input .register_box input[type="submit"]:focus {
+        background: #f5ba1a;
+}
+.checkbox_option input{
+    display: none;
+    
+}
+.checkbox_option label{
+    margin-right: 1em;
+    position: relative;
+}
+.checkbox_option label:before {
+      content: "";
+      display: inline-block;
+      width: 0.5em;
+      height: 0.5em;
+      margin-right: 0.5em;
+      vertical-align: -2px;
+      border: 2px solid rgb(150, 69, 69);
+      padding: 0.12em;
+      background-color: transparent;
+      background-clip: content-box;
+      transition: all 0.2s ease;
+}
+.checkbox_option label:after {
+      border-right: 2px solid black;
+      border-top: 2px solid black;
+      content: "";
+      height: 20px;
+      left: 2px;
+      position: absolute;
+      top: 7px;
+      transform: scaleX(-1) rotate(135deg);
+      transform-origin: left top;
+      width: 7px;
+      display: none;
+}
+.register .container .register_input .register_box .mail_phone input[type=number] {
+    -moz-appearance: textfield;
+  }
+.checkbox_option input:hover + label:before {
+          border-color: black;
+}
+.checkbox_option input:checked + label:before {
+            border-color: black;
+}
+.checkbox_option input:checked + label:after {
+            -moz-animation: check 0.8s ease 0s running;
+            -webkit-animation: check 0.8s ease 0s running;
+            animation: check 0.8s ease 0s running;
+            display: block;
+            width: 7px;
+            height: 20px;
+            border-color: black;
+}
+.register .container .register_input .register_box .Profile-errorMessage  .note {
+    color: #ff0000;
+    margin-top: 0;
+    padding: 0;
+    font-size: 12px;
+}  
+  
+@-webkit-keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+  }
+  
+  @keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+  }
+
+
+  .login-modal{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 200px;
+    margin-left: 200px;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+    z-index: 9999;
+    transition: 0.5s;
+    
+}
+
+.modal-container{
+   
+    overflow: hidden;
+    position: relative;
+    height: 800px;
+    width: 600px;
+  
+    background: fff;
+    border-radius: 3px;
+}
+
+.ModalHeader .Title{
+    font-size: 30px;
+    margin-top: 0px;
+    font-weight: 550;
+    color: rgb(59, 61, 63);
+    width: 150px;   
+}
+.input p{
+    font-weight: 550;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.input  .forgetPass {
+    margin-bottom: 80px;
+    letter-spacing: 1px;
+    margin: 0px 0px 10px 0;
+     float: right;
+     
+     color: goldenrod;
+     font-size: 14.5px;
+    cursor: pointer;
+    }
+    .input  .forgetPass:hover{
+        border-bottom: 1px solid goldenrod;
+    }
+.input{
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    text-align: left;
+    color: rgb(141, 117, 117);
+    font-weight: 500;
+    margin-top: 50px;
+}
+.input input{
+    border: none;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 17px;
+    width: 100%;
+    height: 50px;
+    outline-color: rgba(218, 165, 32, 0.3);
+    outline-width: .5px;
+    background-color: transparent;
+    
+}
+
+  
+a{
+    text-align:center ;
+    text-decoration: none;
+    color: goldenrod;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 10px 0;
+
+  }
+.signbtnlogin:hover{
+    border-bottom: 1px solid goldenrod;
+}
+.signbtn{
+    margin:35px 10px 10px 0;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 550;
+    padding:10px 10px;
+    color: white;
+    background-color:#f5ba1a;
+    transform: scale(1);
+    border: none;
+    cursor: pointer;
+}
+.signbtn:hover{
+    transition: 0.5s ease-in-out;
+}
+
